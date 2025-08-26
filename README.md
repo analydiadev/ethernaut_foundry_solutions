@@ -11,10 +11,18 @@ This repository was created to  solve the challenges from **[Ethernaut](https://
 - `scripts/` → helper scripts for deployment and interactions  
 
 ## How to Run  
-1. Install Foundry:  
+1. Install Foundry:
+```bash
+  curl -L https://foundry.paradigm.xyz | bash
+```
+```bash
+  foundryup
+``` 
    
-2. Install Dependecies:
- ``` forge install ```
+3. Install Dependecies:
+```bash
+  forge install
+``` 
 
 ## Purpose
 
