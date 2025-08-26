@@ -1,0 +1,12 @@
+[profile.default]
+src = "src"
+out = "out"
+libs = ["lib"]
+
+remappings = [
+    "@openzeppelin/=lib/openzeppelin-contracts/",
+    "@openzeppelin-06/=lib/openzeppelin-contracts-06/",
+]
+
+eth_rpc_url = "https://rpc.ankr.com/eth_sepolia/953f006dec4231b66970373c2ce3b7b99d9e152e913b09f6365ba1ea00cb2685"
+etherscan_api_key = '${ETHERSCAN_KEY}'
