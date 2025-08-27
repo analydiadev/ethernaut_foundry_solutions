@@ -1,6 +1,6 @@
 # Ethernaut Challenges - OpenZeppelin  
 
-This repository was created to document and solve the challenges from **[Ethernaut](https://ethernaut.openzeppelin.com/)**, the smart contract hacking game developed by OpenZeppelin.  
+This repository was created to  solve the challenges from **[Ethernaut](https://ethernaut.openzeppelin.com/)**, the smart contract hacking game developed by OpenZeppelin.  
 
 ## Technologies Used  
 - [Foundry](https://book.getfoundry.sh/) – a fast and efficient framework for Solidity development, testing, and deployment.  
@@ -11,10 +11,18 @@ This repository was created to document and solve the challenges from **[Etherna
 - `scripts/` → helper scripts for deployment and interactions  
 
 ## How to Run  
-1. Install Foundry:  
+1. Install Foundry:
+```bash
+  curl -L https://foundry.paradigm.xyz | bash
+```
+```bash
+  foundryup
+``` 
    
-2. Install Dependecies:
- ``` forge install ```
+3. Install Dependecies:
+```bash
+  forge install
+``` 
 
 ## Purpose
 
