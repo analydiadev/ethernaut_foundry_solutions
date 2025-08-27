@@ -46,7 +46,7 @@ This section lists the vulnerabilities found while solving the Ethernaut challen
 - **Fallback Contract Vulnerability**
  <br>
 
-- **Fallout Contract Vulnerability**: 
+- **:robot: Fallout Contract Vulnerability**: 
   <br>
   
 
@@ -54,10 +54,14 @@ This section lists the vulnerabilities found while solving the Ethernaut challen
 
     <br>
 - **🧩 CoinFlip Contract Vulnerability**: 
-<br>
-    
-    The contract is named Fallout, but the function intended to act as the constructor is named Fal1out (with a digit "1" instead of an "l"). Because of this typo, the function is not recognized as a constructor, and is instead treated as a regular public payable function. Using blockhash as a source of randomness is predictable and can be exploited. The hash of the previous block is public and can be known by anyone. Blockchain data like block hashes are not suitable for generating secure random numbers.
+
     <br>
+    
+  The contract is named Fallout, but the function intended to act as the constructor is named Fal1out (with a digit "1" instead of an "l"). Because of this typo, the function is not recognized as a constructor, and is instead treated as a regular public payable function. Using blockhash as a source of randomness is predictable and can be exploited. The hash of the previous block is public and can be known by anyone. Blockchain data like block hashes are not suitable for generating secure random numbers.
+
+    <br>
+   
+    
  
 - **:telephone: Telphone Contract Vulnerability**: 
     <br>
