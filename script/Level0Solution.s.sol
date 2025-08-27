@@ -2,10 +2,9 @@
 pragma solidity ^0.8.13;
 
 import "../src/Level0.sol";
-import "forge-std/Test.sol";
-import "forge-std/Script.sol";
-import "forge-std/console.sol";
-
+import "../lib/forge-std/src/Test.sol";
+import "../lib/forge-std/src/Script.sol";
+import "../lib/forge-std/src/console.sol";
 
 contract Level0Solution is Script {
    

@@ -2,11 +2,9 @@
 pragma solidity ^0.8.13;
 
 import "../src/Fallback.sol";
-import "forge-std/Test.sol";
-import "forge-std/Script.sol";
-import "forge-std/console.sol";
-
-
+import "../lib/forge-std/src/Test.sol";
+import "../lib/forge-std/src/Script.sol";
+import "../lib/forge-std/src/console.sol";
 contract FallbackInstance is Script {
    
    //I must send the transaction using "payable" because the fallback function in the "Fallback" smart contract requires, obs: receive().

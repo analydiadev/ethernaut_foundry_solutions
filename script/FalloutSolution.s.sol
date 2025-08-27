@@ -2,10 +2,9 @@
 pragma solidity ^0.6.0;
 
 import "../src/Fallout.sol";
-import "forge-std/Test.sol";
-import "forge-std/Script.sol";
-import "forge-std/console.sol";
-
+import "../lib/forge-std/src/Test.sol";
+import "../lib/forge-std/src/Script.sol";
+import "../lib/forge-std/src/console.sol";
 
 contract FalloutSolution is Script {
    

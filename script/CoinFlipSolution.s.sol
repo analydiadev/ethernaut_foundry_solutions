@@ -2,9 +2,10 @@
 pragma solidity ^0.8.13;
 
 import "../src/CoinFlip.sol";
-import "forge-std/Test.sol";
-import "forge-std/Script.sol";
-import "forge-std/console.sol";
+import "../lib/forge-std/src/Test.sol";
+import "../lib/forge-std/src/Script.sol";
+import "../lib/forge-std/src/console.sol";
+
 
 contract Player {
     uint256 constant FACTOR = 57896044618658097711785492504343953926634992332820282019728792003956564819968;
