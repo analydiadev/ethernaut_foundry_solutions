@@ -57,7 +57,8 @@ This section lists the vulnerabilities found while solving the Ethernaut challen
 
     <br>
     
-  The contract is named Fallout, but the function intended to act as the constructor is named Fal1out (with a digit "1" instead of an "l"). Because of this typo, the function is not recognized as a constructor, and is instead treated as a regular public payable function. Using blockhash as a source of randomness is predictable and can be exploited. The hash of the previous block is public and can be known by anyone. Blockchain data like block hashes are not suitable for generating secure random numbers.
+  The contract uses blockhash(block.number - 1) to generate randomness which is predictable because the previous block hash is public and can be known by anyone. Miners can also manipulate the block to influence the outcome.
+  An attacker can create a contract that replicates the CoinFlip logic, calculates the coin flip result from the previous block hash, and calls flip() with the predicted outcome, ensuring a win every time.
 
     <br>
    
