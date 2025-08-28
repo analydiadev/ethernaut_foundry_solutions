@@ -104,6 +104,16 @@ This section lists the vulnerabilities found while solving the Ethernaut challen
     🎯 **Exploit Scenario**
 
     An attacker can call the transfer() function with a value greater than their balance, causing underflow and gaining a massive token balance.  
+
+    <br>
+
+  - 🔥 **Delegation Contract Vulnerability**
+
+    The Delegation contract uses delegatecall inside its fallback function to forward calls to a Delegate contract. This allows external code execution in the context of Delegation, including access to its storage.
+
+  🎯 **Exploit Scenario**
+
+  The Delegate contract contains a public pwn() function that sets owner = msg.sender. An attacker can call Delegation with the pwn() function signature. Since the fallback uses delegatecall, the pwn() function runs in Delegation's context, changing its owner to the attacker.
  
 
 
