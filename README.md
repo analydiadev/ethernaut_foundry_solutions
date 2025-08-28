@@ -62,7 +62,7 @@ This section lists the vulnerabilities found while solving the Ethernaut challen
     
     🎯 **Exploit Scenario**
 
-      Since Fal1out is a public function, anyone can call it and set themselves as the owner by sending a transaction. Consequently, ownership is uninitialized and can be claimed by anyone.
+    Since Fal1out is a public function, anyone can call it and set themselves as the owner by sending a transaction. Consequently, ownership is uninitialized and can be claimed by anyone.
 
 
     <br>
@@ -111,9 +111,9 @@ This section lists the vulnerabilities found while solving the Ethernaut challen
 
     The Delegation contract uses delegatecall inside its fallback function to forward calls to a Delegate contract. This allows external code execution in the context of Delegation, including access to its storage.
 
-  🎯 **Exploit Scenario**
+    🎯 **Exploit Scenario**
 
-  The Delegate contract contains a public pwn() function that sets owner = msg.sender. An attacker can call Delegation with the pwn() function signature. Since the fallback uses delegatecall, the pwn() function runs in Delegation's context, changing its owner to the attacker.
+     An attacker can call Delegation with the pwn() function signature. Since the fallback uses delegatecall, the pwn() function runs in Delegation's context, changing its owner to the attacker.
  
 
 
