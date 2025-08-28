@@ -51,7 +51,6 @@ This section lists the vulnerabilities found while solving the Ethernaut challen
   
 
     The contract is named Fallout, but the function intended to act as the constructor is named Fal1out (with a digit "1" instead of an "l"). Because of this typo, the function is not recognized as a constructor, and is instead treated as a regular public payable function. Upon deployment, the owner variable remains at its default value: address(0). 
-    <br>
     
     🎯 **Exploit Scenario**
       Since Fal1out is a public function, anyone can call it and set themselves as the owner by sending a transaction. Consequently, ownership is uninitialized and can be claimed by anyone.
@@ -60,29 +59,25 @@ This section lists the vulnerabilities found while solving the Ethernaut challen
     <br>
 - **🧩 CoinFlip Contract Vulnerability**: 
 
-    <br>
-    
   The contract uses blockhash(block.number - 1) to generate randomness which is predictable because the previous block hash is public and can be known by anyone. Miners can also manipulate the block to influence the outcome.
-  
-    <br>
 
   🎯 **Exploit Scenario**
   An attacker can create a contract that replicates the CoinFlip logic, calculates the coin flip result from the previous block hash, and calls flip() with the predicted outcome, ensuring a win every time.
+    
     <br>
  
 - **:telephone: Telphone Contract Vulnerability**: 
-    <br>
 
     When calling changeOwner directly from your EOA, tx.origin equals msg.sender, so the require condition tx.origin != msg.sender fails and the ownership cannot change. However, if an EOA account calls an intermediary malicious contract, the vulnerability can be exploited since tx.origin will not be the same as msg.sender. 
-    <br>
+
     🎯 **Exploit Scenario**
     
     An attacker can use an EOA (Externally Owned Account) as tx.origin to start a transaction, which then calls a malicious contract that executes a function to change the ownership.
     <br>
 
  
- - 📊 **Token Contract Vulnerability**]
-    <br>
+ - 📊 **Token Contract Vulnerability**
+
     In Solidity version 0.6, arithmetic operations like subtraction do not automatically check for underflow or overflow.
 
     ``If balances[msg.sender] = 20 and _value = 21`` then:
@@ -94,8 +89,6 @@ This section lists the vulnerabilities found while solving the Ethernaut challen
     ``2^256 - 1 = 115792089237316195423570985008687907853269984665640564039457584007913129639935``
 
     The require still passes, because that number is greater than 0.
-
-     <br> 
 
     🎯 **Exploit Scenario**
 
