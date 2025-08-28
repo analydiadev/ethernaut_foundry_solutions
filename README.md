@@ -44,15 +44,15 @@ This repository serves as study material and practice for Smart Contract Securit
 This section lists the vulnerabilities found while solving the Ethernaut challenges. Each vulnerability includes a description.
 
 - **Fallback Contract Vulnerability**
- <br>
+ 
   
    The contract has a fallback function that requires msg.value to be greater than zero and the msg.sender’s contribution to be greater than zero. If these conditions are met, the fallback function transfers ownership to the caller. 
     
     🎯 **Exploit Scenario**
 
-    An attacker can exploit this by first making a contribution, then sending WEI with an empty calldata (triggering the fallback), thereby gaining ownership of the contract.
-
-    <br>
+  An attacker can exploit this by first making a contribution, then sending WEI with an empty calldata (triggering the fallback), thereby gaining ownership of the contract.
+  
+  <br>
 
 - **:robot: Fallout Contract Vulnerability**: 
   <br>
@@ -62,7 +62,11 @@ This section lists the vulnerabilities found while solving the Ethernaut challen
     
     🎯 **Exploit Scenario**
 
+<<<<<<< HEAD
     Since Fal1out is a public function, anyone can call it and set themselves as the owner by sending a transaction. Consequently, ownership is uninitialized and can be claimed by anyone.
+=======
+  Since Fal1out is a public function, anyone can call it and set themselves as the owner by sending a transaction. Consequently, ownership is uninitialized and can be claimed by anyone.
+>>>>>>> 199441800d5f637127cb3680e59767e76220a4f8
 
 
     <br>
