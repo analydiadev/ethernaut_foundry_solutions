@@ -45,6 +45,14 @@ This section lists the vulnerabilities found while solving the Ethernaut challen
 
 - **Fallback Contract Vulnerability**
  <br>
+  
+   The contract has a fallback function that requires msg.value to be greater than zero and the msg.sender’s contribution to be greater than zero. If these conditions are met, the fallback function transfers ownership to the caller. 
+    
+    🎯 **Exploit Scenario**
+
+    An attacker can exploit this by first making a contribution, then sending WEI with an empty calldata (triggering the fallback), thereby gaining ownership of the contract.
+
+    <br>
 
 - **:robot: Fallout Contract Vulnerability**: 
   <br>
@@ -53,6 +61,7 @@ This section lists the vulnerabilities found while solving the Ethernaut challen
     The contract is named Fallout, but the function intended to act as the constructor is named Fal1out (with a digit "1" instead of an "l"). Because of this typo, the function is not recognized as a constructor, and is instead treated as a regular public payable function. Upon deployment, the owner variable remains at its default value: address(0). 
     
     🎯 **Exploit Scenario**
+
       Since Fal1out is a public function, anyone can call it and set themselves as the owner by sending a transaction. Consequently, ownership is uninitialized and can be claimed by anyone.
 
 
@@ -62,6 +71,7 @@ This section lists the vulnerabilities found while solving the Ethernaut challen
   The contract uses blockhash(block.number - 1) to generate randomness which is predictable because the previous block hash is public and can be known by anyone. Miners can also manipulate the block to influence the outcome.
 
   🎯 **Exploit Scenario**
+
   An attacker can create a contract that replicates the CoinFlip logic, calculates the coin flip result from the previous block hash, and calls flip() with the predicted outcome, ensuring a win every time.
     
     <br>
@@ -73,6 +83,7 @@ This section lists the vulnerabilities found while solving the Ethernaut challen
     🎯 **Exploit Scenario**
     
     An attacker can use an EOA (Externally Owned Account) as tx.origin to start a transaction, which then calls a malicious contract that executes a function to change the ownership.
+    
     <br>
 
  
