@@ -62,11 +62,7 @@ This section lists the vulnerabilities found while solving the Ethernaut challen
     
     🎯 **Exploit Scenario**
 
-<<<<<<< HEAD
     Since Fal1out is a public function, anyone can call it and set themselves as the owner by sending a transaction. Consequently, ownership is uninitialized and can be claimed by anyone.
-=======
-  Since Fal1out is a public function, anyone can call it and set themselves as the owner by sending a transaction. Consequently, ownership is uninitialized and can be claimed by anyone.
->>>>>>> 199441800d5f637127cb3680e59767e76220a4f8
 
 
     <br>
@@ -118,11 +114,5 @@ This section lists the vulnerabilities found while solving the Ethernaut challen
     🎯 **Exploit Scenario**
 
      An attacker can call Delegation with the pwn() function signature. Since the fallback uses delegatecall, the pwn() function runs in Delegation's context, changing its owner to the attacker.
- 
-
-
-
-
-
 
 
